@@ -221,3 +221,4 @@ __marimo__/
 
 # Dados brutos (baixar das fontes, ver README)
 data/raw/*/
+/.idea
