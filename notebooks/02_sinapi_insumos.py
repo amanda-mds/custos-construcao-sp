@@ -15,8 +15,9 @@ def limpar_insumos_antigo(pasta):
                        .str.replace(",", ".", regex=False)
                        .astype(float))
     tabela["data"] = pd.to_datetime(Path(pasta).name + "-01")
+    tabela["descricao"] = tabela["descricao"].str.strip()
+    tabela["unidade"] = tabela["unidade"].str.strip()
     return tabela
-
 
 tabelas = []
 for mes in ["2020-01", "2022-01", "2024-12"]:
