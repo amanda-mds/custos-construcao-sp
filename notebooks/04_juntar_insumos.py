@@ -14,5 +14,7 @@ print(insumos["data"].value_counts().sort_index())
 meses_por_codigo = insumos.groupby("codigo")["data"].nunique()
 print(meses_por_codigo.value_counts().sort_index())
 
+insumos["descricao"] = insumos["descricao"].str.replace("\\", "", regex=False)
+
 insumos.to_csv("../data/processed/insumos.csv", index=False)
 print("Salvo!")
